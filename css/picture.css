@@ -1,0 +1,133 @@
+.main-picture{
+    padding-left: 10%;
+}
+.picture-post-caption-main {
+        padding-left: 0;
+      }
+
+      .picture-post-caption {
+        width: 900px;
+        background-color: #fff;
+        padding-left: 1%;
+        padding-top: 1%;
+      }
+
+      .picture-post-caption img {
+        width: 45px;
+        height: 45px;
+        border-radius: 100%;
+        display: inline-block;
+        vertical-align: middle;
+        object-fit: cover;
+      }
+
+      .picture-post-caption h4 {
+        display: inline-block;
+        vertical-align: middle;
+      }
+
+      .picture-post-caption p {
+        font-weight: 500;
+        padding-bottom: 1%;
+        padding-top: 1%;
+      }
+
+      
+
+      .account-picture-post img {
+        width: 900px;
+        height: 600px;
+        object-fit: contain;
+        background-color: #000;
+      }
+
+
+
+      
+      @media (max-width: 768px) {
+
+
+
+      .account-picture-post {
+        width: 100%;
+        padding-left: 2%;
+        padding-top: 10%;
+        padding-right: 5%;
+        padding-bottom: 5%;
+      }
+
+      .account-picture-post img {
+        width: 280px;
+        height: 300px;
+        object-fit: cover;
+        background-color: #000;
+      }
+
+
+      .action-picture-account {
+        width: 310px;
+        height: 50px;
+        background-color: #fff;
+        box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+        border-radius: 5px;
+      }
+
+      .action-picture-account .bx {
+        padding-top: 1%;
+        padding-left: 2%;
+        font-size: 30px;
+        color: aqua;
+      }
+
+      #picture-liked-btn {
+        display: none;
+        color: red;
+      }
+
+      .caption-video-account {
+        width: 310px;
+        font-size: 10px;
+      }
+
+
+      .picture-post-caption-main {
+        padding-left: 2%;
+      }
+
+      .picture-post-caption {
+        width: 310px;
+        background-color: #fff;
+        padding-left: 1%;
+        padding-top: 1%;
+      }
+
+      .picture-post-caption img {
+        width: 40px;
+        height: 40px;
+        border-radius: 100%;
+        display: inline-block;
+        vertical-align: middle;
+      }
+
+      .picture-post-caption h4 {
+        display: inline-block;
+        vertical-align: middle;
+        font-size: 12px;
+      }
+
+      .picture-post-caption p {
+        font-weight: 500;
+        padding-bottom: 1%;
+        padding-top: 1%;
+        font-size: 12px;
+      }
+
+
+      .account-picture-post {
+        padding-top: 1%;
+      }
+
+      .account-picture-post img {
+        width: 310px;
+      }
+    }

@@ -1,0 +1,382 @@
+    /* Import Google font - Poppins */
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      background: #E3F2FD;
+    }
+
+    .account-and-caption-in-video-post-main {
+      padding-top: 6%;
+      padding-left: 10%;
+    }
+
+    .account-and-caption-in-video-post-main img {
+      width: 50px;
+      height: 50px;
+      object-fit: cover;
+      border-radius: 100%;
+      display: inline-block;
+    }
+
+    .account-and-caption-in-video-post-main h4 {
+      padding-top: 1%;
+      display: inline-block;
+      vertical-align: top;
+      color: #000;
+    }
+
+    .account-and-caption-in-video-post {
+      height: auto;
+      padding-left: 10%;
+    }
+
+    .account-and-caption-in-video-post p {
+      padding-top: 1%;
+      font-weight: 400;
+    }
+
+    .video-player-in-video-post {
+      display: inline-block;
+      max-width: 80%;
+      padding-left: 10%;
+      padding-top: 2%;
+    }
+
+    .top-videos-in-video-post {
+      display: inline-block;
+      max-width: 20%;
+      vertical-align: top;
+      padding-top: 2%;
+    }
+
+    .top-videos-in-video-post a video {
+      width: 400px;
+    }
+
+    body,
+    .custom-container,
+    .custom-video-controls,
+    .custom-video-timer,
+    .custom-options {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .custom-container {
+      width: 100%;
+      user-select: none;
+      overflow: hidden;
+      max-width: 900px;
+      border-radius: 5px;
+      background: #000;
+      aspect-ratio: 16 / 9;
+      position: relative;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      z-index: 0;
+    }
+
+    .custom-container.custom-fullscreen {
+      max-width: 100%;
+      width: 100%;
+      height: 100vh;
+      border-radius: 0px;
+    }
+
+    .custom-wrapper {
+      position: absolute;
+      left: 0;
+      right: 0;
+      z-index: 1;
+      opacity: 0;
+      bottom: -15px;
+      transition: all 0.08s ease;
+    }
+
+    .custom-container.custom-show-controls .custom-wrapper {
+      opacity: 1;
+      bottom: 0;
+      transition: all 0.13s ease;
+    }
+
+    .custom-wrapper::before {
+      content: "";
+      bottom: 0;
+      width: 100%;
+      z-index: -1;
+      position: absolute;
+      height: calc(100% + 35px);
+      pointer-events: none;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+    }
+
+    .custom-video-timeline {
+      height: 7px;
+      width: 100%;
+      cursor: pointer;
+    }
+
+    .custom-video-timeline .custom-progress-area {
+      height: 3px;
+      position: relative;
+      background: rgba(255, 255, 255, 0.6);
+    }
+
+    .custom-progress-area span {
+      position: absolute;
+      left: 50%;
+      top: -25px;
+      font-size: 13px;
+      color: #fff;
+      pointer-events: none;
+      transform: translateX(-50%);
+    }
+
+    .custom-progress-area .custom-progress-bar {
+      width: 0%;
+      height: 100%;
+      position: relative;
+      background: #2289ff;
+    }
+
+    .custom-progress-bar::before {
+      content: "";
+      right: 0;
+      top: 50%;
+      height: 13px;
+      width: 13px;
+      position: absolute;
+      border-radius: 50%;
+      background: #2289ff;
+      transform: translateY(-50%);
+    }
+
+    .custom-progress-bar::before,
+    .custom-progress-area span {
+      display: none;
+    }
+
+    .custom-video-timeline:hover .custom-progress-bar::before,
+    .custom-video-timeline:hover .custom-progress-area span {
+      display: block;
+    }
+
+    .custom-wrapper .custom-video-controls {
+      padding: 5px 20px 10px;
+    }
+
+    .custom-video-controls .custom-options {
+      width: 100%;
+    }
+
+    .custom-video-controls .custom-options:first-child {
+      justify-content: flex-start;
+    }
+
+    .custom-video-controls .custom-options:last-child {
+      justify-content: flex-end;
+    }
+
+    .custom-options button {
+      height: 40px;
+      width: 40px;
+      font-size: 19px;
+      border: none;
+      cursor: pointer;
+      background: none;
+      color: #efefef;
+      border-radius: 3px;
+      transition: all 0.3s ease;
+    }
+
+    .custom-options button :where(i, span) {
+      height: 100%;
+      width: 100%;
+      line-height: 40px;
+    }
+
+    .custom-options button:hover :where(i, span) {
+      color: #fff;
+    }
+
+    .custom-options button:active :where(i, span) {
+      transform: scale(0.9);
+    }
+
+    .custom-options button span {
+      font-size: 23px;
+    }
+
+    .custom-options input {
+      height: 4px;
+      margin-left: 3px;
+      max-width: 75px;
+      accent-color: #0078FF;
+    }
+
+    .custom-options .custom-video-timer {
+      color: #efefef;
+      margin-left: 15px;
+      font-size: 14px;
+    }
+
+    .custom-video-timer .custom-separator {
+      margin: 0 5px;
+      font-size: 16px;
+      font-family: "Open sans";
+    }
+
+    .custom-playback-content {
+      display: flex;
+      position: relative;
+    }
+
+    .custom-playback-content .custom-speed-options {
+      position: absolute;
+      list-style: none;
+      left: -40px;
+      bottom: 40px;
+      width: 95px;
+      overflow: hidden;
+      opacity: 0;
+      border-radius: 4px;
+      pointer-events: none;
+      background: rgba(255, 255, 255, 0.9);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      transition: opacity 0.13s ease;
+    }
+
+    .custom-playback-content .custom-speed-options.show {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .custom-speed-options li {
+      cursor: pointer;
+      color: #000;
+      font-size: 14px;
+      margin: 2px 0;
+      padding: 5px 0 5px 15px;
+      transition: all 0.1s ease;
+    }
+
+    .custom-speed-options li:where(:first-child, :last-child) {
+      margin: 0px;
+    }
+
+    .custom-speed-options li:hover {
+      background: #dfdfdf;
+    }
+
+    .custom-speed-options li.custom-active {
+      color: #fff;
+      background: #3e97fd;
+    }
+
+    .custom-container video {
+      width: 100%;
+    }
+
+    @media screen and (max-width: 540px) {
+      .video-player-in-video-post {
+        max-width: 98%;
+        padding-top: 50%;
+        padding-left: 2%;
+      }
+
+      .custom-wrapper .custom-video-controls {
+        padding: 3px 10px 7px;
+      }
+
+      .custom-options input,
+      .custom-progress-area span {
+        display: none !important;
+      }
+
+      .custom-options button {
+        height: 30px;
+        width: 30px;
+        font-size: 17px;
+      }
+
+      .custom-options .custom-video-timer {
+        margin-left: 5px;
+      }
+
+      .custom-video-timer .custom-separator {
+        font-size: 14px;
+        margin: 0 2px;
+      }
+
+      .custom-options button :where(i, span) {
+        line-height: 30px;
+      }
+
+      .custom-options button span {
+        font-size: 21px;
+      }
+
+      .custom-options .custom-video-timer,
+      .custom-progress-area span,
+      .custom-speed-options li {
+        font-size: 12px;
+      }
+
+      .custom-playback-content .custom-speed-options {
+        width: 75px;
+        left: -30px;
+        bottom: 30px;
+      }
+
+      .custom-speed-options li {
+        margin: 1px 0;
+        padding: 3px 0 3px 10px;
+      }
+
+      .custom-right .custom-pic-in-pic {
+        display: none;
+      }
+
+
+      .top-videos-in-video-post {
+        max-width: 100%;
+        padding-top: 10%;
+        padding-left: 3%;
+      }
+
+      .top-videos-in-video-post a video {
+        display: inline-block;
+        width: 100px;
+      }
+
+      .top-videos-in-video-post a {
+        display: inline-block;
+      }
+
+
+      .account-and-caption-in-video-post-main {
+        padding-top: 25%;
+        padding-left: 10%;
+      }
+
+
+      .account-and-caption-in-video-post-main h4 {
+        padding-top: 5%;
+      }
+
+
+      .account-and-caption-in-video-post p {
+        padding-top: 1%;
+        font-size: 8px;
+      }
+
+    }
+
