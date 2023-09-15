@@ -23,12 +23,15 @@
   while ($row = mysqli_fetch_assoc($result)) {
   ?>
   <div class="video-main-container" style="padding-top: 10%; padding-left: 10%;" >
+  
+  <center>
     <main class="video-container">
       <section class="main-video">
         <video src="admin/upload/post/video/<?php echo $row['post']; ?>" controls></video>
         <h3 class="title"><?php echo $row['caption'] ?></h3>
       </section>
     </main>
+  </center>
   </div>
   <br><br><br>
   <?php } ?>
